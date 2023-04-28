@@ -172,10 +172,6 @@ namespace TezosSDKSamples.RPG.Scenes
                     View.AuthenticationQr.IsVisible = true;
                     View.AuthenticationQr.ShowQrCode();
                     _tezos.ConnectWallet();
-
-                    Debug.Log("b41");
-                    await UniTask.Delay(100);
-                    Debug.Log("b42");
                 }
                 else
                 {
