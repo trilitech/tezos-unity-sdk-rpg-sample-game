@@ -86,7 +86,8 @@ if (!tezos.HasActiveWalletAddress())
 
 Players check ownership of a given NFT. For this RPG sample game, NFT ownership unlocks secret walking pathways in the game world.
 
-To see this feature in action, play the `Scene02_Game` Scene. The <a href="./Unity/Assets/Tezos/RPGSampleGame/Web3/Scripts/Runtime/RPG/Scenes/Scene02_Game.cs">Scene02_Game.cs</a> class provides a full demonstration. Here is partial snippet.
+To see this feature in action, play the `Scene01_IntroMenu` Scene. The <a href="./Unity/Assets/Tezos/RPGSampleGame/Web3/Scripts/Runtime/RPG/Scenes/Scene01_IntroMenu.cs">Scene01_IntroMenu.cs</a> class provides a full demonstration. Here is partial snippet.
+
 ```csharp
 // Setup
 string demoNFTAddress = "KT1BRADdqGk2eLmMqvyWzqVmPQ1RCBCbW5dY";
