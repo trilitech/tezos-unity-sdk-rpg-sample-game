@@ -25,6 +25,8 @@ This **Unity Project** demonstrates key features of the Tezos SDK For Unity with
 
 ### Videos
 
+This **Unity Project** is featured in the following videos.
+
 <table>
 <tr>
 <th>Tezos SDK For Unity - Authentication</th>
