@@ -1,0 +1,21 @@
+{
+    "name": "Tezos.RPG.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:de2836bb66f5f0e46abdc2728fd797a7",
+        "GUID:19eb1911d55d250449ecbc6ec9a3178c",
+        "GUID:71cedef0a99da6f4fa432b8c4cbe9626",
+        "GUID:dc0d85c9a9837b8479a48e484bc54940"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

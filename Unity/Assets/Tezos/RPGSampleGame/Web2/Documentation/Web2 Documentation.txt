@@ -1,0 +1,19 @@
+
+WEB2
+
+Here is info about the original project.
+
+Asset Store
+https://assetstore.unity.com/packages/templates/tutorials/creator-kit-rpg-149309
+
+Learn
+https://learn.unity.com/project/creator-kit-rpg
+
+Forum
+https://forum.unity.com/threads/creator-kit-rpg.704471/
+
+YouTube
+* Creator Kit: RPG (Overview) - https://www.youtube.com/watch?v=l-sRhhjIvIw
+* Creator Kit: RPG (Mini Map Module) - https://www.youtube.com/watch?v=KRmBnMNtPXQ
+* Community Review - https://www.youtube.com/watch?v=fwGRiIpnI8E
+* Community Explainer - https://www.youtube.com/watch?v=wnzJ06Y8mdg&t=1014s
