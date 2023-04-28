@@ -113,9 +113,12 @@ namespace TezosSDKSamples.RPG.Scenes
             }
             View.AuthenticationButtonUI.Text.text = buttonText;
 
-            // Store value for use in other scenes
+            ////////////////////////////////////////////////////////////
+            // Tezos SDK For Unity
+            // Store game-specific values now -- Easy use in other scenes
             RPGSingleton.Instance.IsAuthenticated = isAuthenticated;
             RPGSingleton.Instance.HasRequiredNFT = hasRequiredNft;
+            ////////////////////////////////////////////////////////////
             
             // Display Status Text
             RefreshStatusText();
