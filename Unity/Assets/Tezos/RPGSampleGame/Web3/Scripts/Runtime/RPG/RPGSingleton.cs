@@ -1,12 +1,10 @@
 ﻿
 using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
-using RMC.Core.Data.Types.Storage;
 using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingleton;
 using RPGM.Core;
 using RPGM.Gameplay;
-using TezosAPI;
+using Scripts.Tezos;
 using TezosSDKExamples.Shared.Tezos;
 using TezosSDKSamples.RPG.Scenes;
 using UnityEngine;
@@ -160,11 +158,11 @@ namespace TezosSDKSamples.RPG
             {
                 // Tezos SDK For Unity
                 // Usage: Store reference for convenience
-                ITezosAPI tezos = TezosSingleton.Instance;
+                ITezos tezos = TezosSingleton.Instance;
                 
                 // Tezos SDK For Unity
                 // Returns the address of the current active wallet
-                string activeWalletAddress = tezos.GetActiveWalletAddress();
+                string activeWalletAddress = tezos.Wallet.GetActiveAddress();
                 
                 // Tezos SDK For Unity
                 // Usage: Gets all tokens owned by the authenticated user account

@@ -1,8 +1,9 @@
 using UnityEngine;
 using Cysharp.Threading.Tasks;
-using TezosAPI;
 using TezosSDKExamples.Shared.Tezos;
 using TezosSDKSamples.RPG.View;
+using Scripts.Tezos;
+using Scripts.Tezos.Wallet;
 
 #pragma warning disable CS4014, CS1998, CS0162
 namespace TezosSDKSamples.RPG.Scenes
@@ -23,7 +24,7 @@ namespace TezosSDKSamples.RPG.Scenes
         
         // Tezos SDK For Unity
         // Usage: Store reference for convenience
-        private ITezosAPI _tezos;
+        private ITezos _tezos;
 
         // Tezos SDK For Unity
         // Usage: Display the authentication button (Default is true)
@@ -48,8 +49,8 @@ namespace TezosSDKSamples.RPG.Scenes
             
             // Tezos SDK For Unity
             // Usage: Observe events for Tezos Wallet
-            _tezos.MessageReceiver.AccountConnected += Tezos_OnAccountConnected;
-            _tezos.MessageReceiver.AccountDisconnected += Tezos_AccountDisconnected;
+            _tezos.Wallet.MessageReceiver.AccountConnected += OnAccountConnected;
+            _tezos.Wallet.MessageReceiver.AccountDisconnected += AccountDisconnected;
             
             
             // Refresh
@@ -84,7 +85,7 @@ namespace TezosSDKSamples.RPG.Scenes
             {
                 // Tezos SDK For Unity
                 // Returns the address of the current active wallet
-                string activeWalletAddress = _tezos.GetActiveWalletAddress();
+                string activeWalletAddress = _tezos.Wallet.GetActiveAddress();
 
                 // Tezos SDK For Unity
                 // Determines if the user account owns a given Nft
@@ -134,7 +135,7 @@ namespace TezosSDKSamples.RPG.Scenes
         }
 
         //  Event Handlers --------------------------------
-        private async void Tezos_OnAccountConnected(string address)
+        private async void OnAccountConnected(string address)
         {
             // Required: Render UI
             await RefreshUIAsync();
@@ -143,12 +144,12 @@ namespace TezosSDKSamples.RPG.Scenes
             
             // Tezos SDK For Unity
             // Usage: Get the active wallet address
-            string activeWalletAddress = _tezos.GetActiveWalletAddress();
+            string activeWalletAddress = _tezos.Wallet.GetActiveAddress();
             Debug.Log($"You are connected to a wallet with address <b>{activeWalletAddress}</b>.");
         }
         
         
-        private async void Tezos_AccountDisconnected(string address)
+        private async void AccountDisconnected(string address)
         {
             // Required: Render UI
             await RefreshUIAsync();
@@ -174,7 +175,7 @@ namespace TezosSDKSamples.RPG.Scenes
                     // Usage: Connect To Wallet Using The Tezos SDK For Unity
                     View.AuthenticationQr.IsVisible = true;
                     View.AuthenticationQr.ShowQrCode();
-                    _tezos.ConnectWallet();
+                    _tezos.Wallet.Connect(WalletProviderType.kukai);
                 }
                 else
                 {
@@ -182,7 +183,7 @@ namespace TezosSDKSamples.RPG.Scenes
                     // Tezos SDK For Unity
                     // Usage: Disconnect From Wallet Using The Tezos SDK For Unity
                     View.AuthenticationQr.IsVisible = false;
-                    _tezos.DisconnectWallet();
+                    _tezos.Wallet.Disconnect();
                 }
             });
                 

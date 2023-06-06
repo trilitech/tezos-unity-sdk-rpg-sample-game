@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using Cysharp.Threading.Tasks;
-using TezosAPI;
+using Scripts.Tezos;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -18,15 +18,15 @@ namespace TezosSDKExamples.Shared.Tezos
         /// Determines if the user is authenticated with
         /// the Tezos SDK For Unity
         /// </summary>
-        public static bool HasActiveWalletAddress(this ITezosAPI tezos)
+        public static bool HasActiveWalletAddress(this ITezos tezos)
         {
-            return !string.IsNullOrEmpty(tezos.GetActiveWalletAddress());
+            return !string.IsNullOrEmpty(tezos.Wallet.GetActiveAddress());
         }
 
         /// <summary>
         /// Determines if the authenticated user account owns a given token
         /// </summary>
-        public static async UniTask<bool> IsOwnerOfToken(this ITezosAPI tezos, string account, string contract, int tokenId)
+        public static async UniTask<bool> IsOwnerOfToken(this ITezos tezos, string account, string contract, int tokenId)
         {
             return await CheckTokenBalance(account, contract, tokenId);
         }
@@ -35,7 +35,7 @@ namespace TezosSDKExamples.Shared.Tezos
         /// Gets all tokens owned by the authenticated user account
         /// </summary>
         /// <param name="account"></param>
-        public static async UniTask<List<TezosSDKExamples.Shared.Tezos.TokenBalance>> GetAllTokensForOwner(this ITezosAPI tezos, string account)
+        public static async UniTask<List<TezosSDKExamples.Shared.Tezos.TokenBalance>> GetAllTokensForOwner(this ITezos tezos, string account)
         {
             return await GetAllTokens(account);
         }

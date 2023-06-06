@@ -17,11 +17,11 @@
       "url": "https://registry.npmjs.com"
     },
     "com.trilitech.tezos-unity-sdk": {
-      "version": "https://github.com/trilitech/tezos-unity-sdk.git#1.3.0",
+      "version": "https://github.com/trilitech/tezos-unity-sdk.git#main",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "08f4ace9045685d5eeade33460409d1079b369d1"
+      "hash": "4be4f8afce816e0d78b559a427b1ce1fdea3b4c5"
     },
     "com.unity.2d.animation": {
       "version": "7.0.10",
